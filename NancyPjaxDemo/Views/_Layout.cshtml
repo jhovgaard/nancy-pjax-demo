@@ -1,0 +1,23 @@
+﻿@using System
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+    <body>
+        Layout loaded: @DateTime.Now
+        <div id="container">
+            @RenderBody()
+        </div>
+    
+        <script src="~/Content/Scripts/jquery-2.1.0.min.js"></script>
+        <script src="~/Content/Scripts/jquery.pjax.js"></script>
+        <script>
+            $(function() {
+                $(document).pjax('a', '#container', { timeout: 5000 });
+            });
+        </script>
+    </body>
+</html>
